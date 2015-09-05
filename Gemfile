@@ -17,6 +17,10 @@ gem 'rake'
 
 gem 'shotgun'
 
+# Image uploading
+gem 'carrierwave'
+gem "mini_magick"
+
 group :test do
   gem 'faker'
   gem 'rspec'

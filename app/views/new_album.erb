@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="form-container">
+    <h2>New Album</h2>
+    <div class="saperator"></div>
+    <hr>
+    <form action="/new_album" method="POST">
+      <table>
+        <tr>
+          <td>Album name</td>
+          <td> : </td>
+          <td><input type="text" name="album_name" autofocus></td>
+        </tr>
+        <tr>
+          <td>Album description</td>
+          <td> : </td>
+          <td><textarea name="album_description"></textarea></td>
+        </tr>
+        <tr>
+          <td colspan="3">
+            <input type="submit" value="Create album" class="button">
+          </td>
+        </tr>
+      </table>
+    </form>
+  </div>
+</div>

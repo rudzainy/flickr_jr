@@ -1,0 +1,18 @@
+<div class="container">
+    <h2><%= @photo.name %></h2>
+    <div class="subtext">
+      Uploaded <%= calculate_time_ago(@photo.created_at) %> by <a href="/users/<%= @photo.user_id %>"><%= @photo.user.name %></a>
+    </div>
+    <div>
+      <%= @photo.description %>
+    </div>
+    <% if current_user.id == @photo.user.id %>    
+  	  <div class="right fix-right">
+        <a href="/delete_photo/<%= @photo.id %>"><button class="button">Delete photo</button></a>
+  	  </div>
+    <% end %>
+    <hr>
+    <div class="center">
+      <img src="<%= @photo.file %>" alt="<%= @photo.name %>" class="img-single">
+    </div>
+</div>

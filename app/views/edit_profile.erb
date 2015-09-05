@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="form-container">
+    <h2>Edit Profile</h2>
+    <div class="saperator"></div>
+    <hr>
+    <form action="/users/<%= @user.id %>/edit_profile" method="POST">
+      <table>
+        <tr>
+          <td>username</td>
+          <td> : </td>
+          <td><input type="text" name="name" value="<%= @user.name %>"></td>
+        </tr>
+        <tr>
+          <td>email</td>
+          <td> : </td>
+          <td><input type="text" name="email" value="<%= @user.email %>"></td>
+        </tr>
+        <tr>
+          <td>password</td>
+          <td> : </td>
+          <td><input type="password" name="password" value="<%= @user.password %>"></td>
+        </tr>
+        <tr>
+          <td>about</td>
+          <td> : </td>
+          <td><textarea name="about"><%= @user.about %></textarea></td>
+        </tr>
+        <tr>
+          <td colspan="3">
+            <input type="submit" value="Apply" class="button">
+          </td>
+        </tr>
+      </table>
+    </form>
+  </div>
+</div>

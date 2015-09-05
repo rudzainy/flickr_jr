@@ -1,0 +1,49 @@
+<div class="container">
+  <div class="form-container">
+    <h2>Upload Photo</h2>
+    <div class="saperator"></div>
+    <hr>
+    <form action="/albums/new_photo" method="POST" enctype="multipart/form-data">
+      <table>
+        <tr>
+          <td>Choose your photo</td>
+          <td> : </td>
+          <td><input type="file" name="image"></td>
+        </tr>
+        <tr>
+          <td>Album</td>
+          <td> : </td>
+          <td>
+            <select name="album_id">
+              <% @albums.each do |album| %>
+              <option value="<%= album.id %>"
+                <% if !(defined?(@album)).nil? %>
+                  <% if @album.id == album.id %>
+                    selected
+                    <% end %>
+                <% end %>
+                ><%= album.name %></option>
+              <% end %>
+            </select>
+            or <a href="/new_album">create a new album</a>
+            </td>
+        </tr>
+        <tr>
+          <td>Photo name</td>
+          <td> : </td>
+          <td><input type="text" name="photo_name" value="<%= @name %>"></td>
+        </tr>
+        <tr>
+          <td>Photo description</td>
+          <td> : </td>
+          <td><textarea name="photo_description"><%= @description %></textarea></td>
+        </tr>
+        <tr>
+          <td colspan="3">
+            <input type="submit" value="Upload photo" class="button">
+          </td>
+        </tr>
+      </table>
+    </form>
+  </div>
+</div>

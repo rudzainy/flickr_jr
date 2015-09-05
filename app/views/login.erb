@@ -1,0 +1,51 @@
+<div class="container">
+  <div class="form-container">
+    <h3>Log in</h3>
+    <form action="/login" method="POST">
+      <table>
+        <tr>
+          <td>username</td>
+          <td> : </td>
+          <td><input type="text" name="name" value="<%= @login_name %>"></td>
+        </tr>
+        <tr>
+          <td>password</td>
+          <td> : </td>
+          <td><input type="password" name="password"></td>
+        </tr>
+        <tr>
+          <td colspan="3">
+            <input type="submit" value="Log in" class="button">
+          </td>
+        </tr>
+      </table>
+    </form>
+  </div>
+  <div class="form-container">
+    <h3>Sign up</h3>
+    <form action="/signup" method="POST">
+      <table>
+        <tr>
+          <td>username</td>
+          <td> : </td>
+          <td><input type="text" name="name" value="<%= @signup_name %>"></td>
+        </tr>
+        <tr>
+          <td>email</td>
+          <td> : </td>
+          <td><input type="text" name="email" value="<%= @email %>"></td>
+        </tr>
+        <tr>
+          <td>password</td>
+          <td> : </td>
+          <td><input type="password" name="password"></td>
+        </tr>
+        <tr>
+          <td colspan="3">
+            <input type="submit" value="Sign up" class="button">
+          </td>
+        </tr>
+      </table>
+    </form>
+  </div>
+</div>

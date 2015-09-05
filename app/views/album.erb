@@ -1,0 +1,24 @@
+<div class="container">
+  <h2><%= @album.name %></h2>
+  <div class="subtext">by <%= @user.name %></div>
+  <div><%= @album.description %></div>
+  <div class="saperator"></div>
+    
+  <% if current_user.id == @user.id %> 
+  <div class="right fix-right">
+    <a href="/album/<%= @album.id %>/edit_album"><button class="button">Edit album</button></a>&nbsp;
+    <a href="/albums/<%= @album.id %>/new_photo"><button class="button">Upload new photo</button></a>
+  </div> <% end %>
+  <hr>
+
+  <div class="container">
+    <% @album.photos.all.each do |photo| %>
+    <div class="img-bomb-container">
+      <a href="/albums/<%= @album.id %>/<%= photo.id %>"><img src="<%= photo.file %>" alt="<%= photo.name %>" class="img-bomb-img"></a> 
+    </div>
+    <div class="subtext-preview">
+      Uploaded <%= calculate_time_ago(photo.created_at) %><br>by <a href="/users/<%= photo.user_id %>"><%= photo.user.name %></a>
+    </div>
+    <% end %>
+  </div>
+</div>

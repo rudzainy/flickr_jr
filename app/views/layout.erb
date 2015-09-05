@@ -15,9 +15,57 @@
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
 
-  <title></title>
+  <title>flickr jr</title>
 </head>
 <body>
-  <%= yield %>
+  <div class="body-bg">
+    <div class="nav-bar-container">
+      <div class="nav-bar-menu">
+        <div class="nav-logo left"><a href="/">flickr jr</a></div>
+
+        <nav id="primary_nav_wrap" class="left">
+          <ul>
+            <li>
+              <% if logged_in? %>
+              <a href="/users/<%= current_user.id %>">You</a>
+              <% else %>
+              <button><a href="/login">Sign Up</a></button>
+              <% end %>
+            </li>
+          </ul>
+        </nav>
+          <nav id="primary_nav_wrap" class="right">
+            <ul>
+              <li>
+                <a href="/albums/new_photo">Upload</a>
+              </li>
+            </ul>
+            <ul>
+              <li>
+              <% if logged_in? %>
+                <a href="/users/<%= current_user.id %>"><img src="/images/avatar.png" alt="" width="33px" height="33px"></a>
+                <ul>
+                  <li>
+                    <a href="/users/<%= current_user.id %>/edit_profile">Profile</a>
+                  </li>
+                  <li>
+                    <a href="/logout">Log Out</a>
+                  </li>
+                </ul>
+              <% else %>
+                <a href="/login">Log In</a>
+              <% end %>
+              </li>
+            </ul>  
+          </nav>      
+
+      </div>
+    </div>
+    <% if @flash %>
+    <div class="flash"><%= @flash %></div>
+    <% end %>
+    <%= yield %>
+  </div>
+  <div class="footer">Copyright &copy; 2015 flickr jr | All rights reserved</div>
 </body>
 </html>

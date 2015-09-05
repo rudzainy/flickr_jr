@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="form-container">
+    <h2>Edit Album</h2>
+    <div class="saperator"></div>
+    <hr>
+    <form action="/album/<%= @album.id %>/edit_album" method="POST">
+      <table>
+        <tr>
+          <td>Album name</td>
+          <td> : </td>
+          <td><input type="text" name="album_name" value="<%= @album.name %>"></td>
+        </tr>
+        <tr>
+          <td>Album description</td>
+          <td> : </td>
+          <td><textarea name="album_description"><%= @album.description %></textarea></td>
+        </tr>
+        <tr>
+          <td colspan="3">
+            <input type="submit" value="Apply" class="button">
+          </td>
+        </tr>
+      </table>
+    </form>
+  </div>
+</div>

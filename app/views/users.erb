@@ -1,0 +1,29 @@
+<div class="container">
+  <div>
+    <h2><%= @user.name %></h2>
+  </div>
+  <div class="subtext">
+    Member since <%= calculate_time_ago(@user.created_at) %> | <%= @user.photos.count %> photos
+  </div>
+  <div>
+    <%= @user.about %>
+  </div>
+
+  <div class="saperator"></div>
+  <div class="right fix-right">
+    <a href="/users/<%= @user.id %>/albums"><button>Albums</button></a>
+  </div>
+  <hr>
+  
+  <% @user.photos.all.each do |photo| %>
+  <div class="img-bomb-container">
+    <div>
+      <a href="/albums/<%= photo.album_id %>/<%= photo.id %>"><img src="<%= photo.file %>" alt="<%= photo.name %>" class="img-bomb-img"></a>
+    </div>
+    <div class="subtext-preview">
+      Uploaded <%= calculate_time_ago(photo.created_at) %><br>by <a href="/users/<%= photo.user_id %>"><%= photo.user.name %></a>
+    </div> 
+  </div> 
+  <% end %>
+  
+</div>
