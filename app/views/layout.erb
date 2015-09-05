@@ -29,7 +29,7 @@
               <% if logged_in? %>
               <a href="/users/<%= current_user.id %>">You</a>
               <% else %>
-              <button><a href="/login">Sign Up</a></button>
+              <button class="nav-button"><a href="/login">Sign Up</a></button>
               <% end %>
             </li>
           </ul>

@@ -15,7 +15,7 @@ get '/albums/new_photo' do
 		erb :new_photo
 	else
 		@flash = "Please log in or sign up to post a photo!"
-		erb :logged_in
+		erb :login
 	end
 
 end

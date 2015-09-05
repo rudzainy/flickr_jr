@@ -6,7 +6,7 @@
     <div>
       <%= @photo.description %>
     </div>
-    <% if current_user.id == @photo.user.id %>    
+    <% if logged_in? and current_user.id == @photo.user.id %>    
   	  <div class="right fix-right">
         <a href="/delete_photo/<%= @photo.id %>"><button class="button">Delete photo</button></a>
   	  </div>

@@ -4,7 +4,7 @@
   <div><%= @album.description %></div>
   <div class="saperator"></div>
     
-  <% if current_user.id == @user.id %> 
+  <% if logged_in? and current_user.id == @user.id %> 
   <div class="right fix-right">
     <a href="/album/<%= @album.id %>/edit_album"><button class="button">Edit album</button></a>&nbsp;
     <a href="/albums/<%= @album.id %>/new_photo"><button class="button">Upload new photo</button></a>

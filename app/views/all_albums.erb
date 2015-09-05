@@ -2,7 +2,7 @@
   <h2><%= @user.name %>'s Albums</h2>
   <div class="saperator"></div>
   
-  <% if current_user.id == @user.id %>  
+  <% if logged_in? and current_user.id == @user.id %>  
   <div class="right fix-right">
     <a href="/new_album"><button class="button">Create new album</button></a>
   </div>
@@ -26,7 +26,7 @@
           Created <%= calculate_time_ago(album.created_at) %> | <%= album.photos.count %> photos
         </div>
       </div>
-        <% if current_user.id == @user.id %>    
+        <% if logged_in? and current_user.id == @user.id %>    
         <div class="right">
           <a href="/album/<%= album.id %>/edit_album"><button class="button">Edit album</button></a>&nbsp;
           <a href="/delete_album/<%= album.id %>"><button class="button">Delete album</button></a>

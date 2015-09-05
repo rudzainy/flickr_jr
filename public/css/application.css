@@ -32,6 +32,10 @@
 	padding: 8px 10px 0 10px;
 }
 
+.nav-button a:hover {
+	background-color: #128FDC !important;
+}
+
 .nav-items {
 	padding: 18px 10px 0 10px;
 }
